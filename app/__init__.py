@@ -10,7 +10,7 @@ def create_app():
     app.config['MYSQL_HOST'] = 'localhost'
     app.config['MYSQL_USER'] = 'root'
     app.config['MYSQL_PASSWORD'] = 'qwebnm123'
-    app.config['MYSQL_DB'] = 'ltc_pos'
+    app.config['MYSQL_DB'] = 'umbrellapos'
     mysql.init_app(app)
 
     app.register_blueprint(main)
