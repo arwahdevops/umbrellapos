@@ -1,0 +1,103 @@
+     <!--Header-->
+  {% include 'header.html' %}
+  <!--./Header-->
+
+  <!-- Navbar -->
+  {% include 'navbar.html' %}
+  <!-- /.navbar -->
+
+  <!-- Sidebar -->
+  {% include 'sidebar.html' %}
+  <!-- ./Sidebar -->
+
+  <!-- Konten -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Produk</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Produk</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Kode Produk</th>
+                    <th>Nama Produk</th>
+                    <th>Jenis Produk</th>
+                    <th>Harga Jual</th>
+                    <th>Stock</th>
+                    <th>Diskon %</th>
+                    <th>Deskripsi Produk</th>
+                    <th>QR / Barcode</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      {% for data in product %}
+                      <td>{{ loop.index }}</td>
+                      <td>{{ data.1 }}</td>
+                      <td>{{ data.2 }}</td>
+                      <td>{{ data.3 }}</td>
+                      <td>{{ data.4 }}</td>
+                      <td>{{ data.5 }}</td>
+                      <td>{{ data.6 }}</td>
+                      <td>{{ data.7 }}</td>
+                      <td>{{ data.8 }}</td>
+                  </tr>
+                      {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+  
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- ./Main content -->
+    
+    <!-- /.content -->
+</div>
+  
+  <!-- /.Konten -->
+<!-- page script -->
+<script>
+$(document).ready(function (){
+    $("#example1").DataTable({
+        "responsive": true,
+        "autoWidth": false
+    });
+});
+</script>
+  <!-- Footer -->
+  {% include 'footer.html' %}
+  <!-- ./Footer -->
