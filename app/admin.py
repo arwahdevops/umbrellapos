@@ -6,7 +6,8 @@ main = Blueprint('main', __name__)
 def main_index():
     try:
         user = session['name']
-        return render_template('layout.html')
+        judul = "Dashboard"
+        return render_template('layout.html', judul=judul)
     except:
         return redirect(url_for("login.login_index"))
     

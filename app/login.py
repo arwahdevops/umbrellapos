@@ -22,4 +22,10 @@ def login_index():
             else:
                 return "Error password or user not match"
     else:
+        if 'name' in session:
+             user = session['name']
+             return redirect(url_for("main.main_index"))
+        else:
+            return render_template("login.html")
+
         return render_template("login.html")
