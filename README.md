@@ -5,10 +5,7 @@ cara installasi :
 - install python
 - cd umbrellapos
 - pip install -r requirements.txt
+- pip install virtualenv
 - virtualenv env
 - env\Scripts\activate.bat (untuk pengguna windows)
 - flask run
-
-Untuk database menggunakan mysql 5.7, bisa hubungi saya via email : rikipermana@live.com
-
-
