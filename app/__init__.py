@@ -1,8 +1,11 @@
 from flask import Flask, Blueprint
 from .extensions import mysql
+from .login import login
+from .register import register
+from .forgot import forgot
+from .logout import logout
 from .admin import main
 from .product import product
-
 
 def create_app():
     app = Flask(__name__)
@@ -11,9 +14,17 @@ def create_app():
     app.config['MYSQL_USER'] = 'root'
     app.config['MYSQL_PASSWORD'] = 'qwebnm123'
     app.config['MYSQL_DB'] = 'umbrellapos'
+    #app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
     mysql.init_app(app)
 
+    app.secret_key = "Arm#$1rfaklsapP()!@"
+    
     app.register_blueprint(main)
+    app.register_blueprint(login)
+    app.register_blueprint(register)
+    app.register_blueprint(forgot)
+    app.register_blueprint(logout)
     app.register_blueprint(product)
 
     return app
