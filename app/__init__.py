@@ -6,7 +6,10 @@ from .forgot import forgot
 from .logout import logout
 from .admin import main
 from .product import product
-
+from .supplier import supplier
+from .profile import profile
+from .member import member
+from .report import report
 def create_app():
     app = Flask(__name__)
 
@@ -26,5 +29,9 @@ def create_app():
     app.register_blueprint(forgot)
     app.register_blueprint(logout)
     app.register_blueprint(product)
+    app.register_blueprint(supplier)
+    app.register_blueprint(profile)
+    app.register_blueprint(member)
+    app.register_blueprint(report)
 
     return app
