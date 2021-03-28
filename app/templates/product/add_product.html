@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block title %} Tambah Data Barang {% endblock %}
+{% block content %}
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Data Produk</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                  class="fas fa-minus"></i></button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col" posisi="kiri">
+                {% from "_formhelpers.html" import render_field %}
+                <form method="post" enctype="multipart/form-data">
+                  <div>
+                    <label>Kode Produk</label>
+                    <input class="form-control" type="text" name="product_code" required>
+                    <label>Nama Produk</label>
+                    <input class="form-control" type="text" name="product_name" required>
+                    <div class="form-group">
+                      <label>Kategori</label>
+                      <select class="form-control select2" id="category" name="category" style="width: 100%;">
+                        {% for row in data %}
+                        <option value="{{row.0}}">{{row.1}}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                    <label>Harga Jual</label>
+                    <input class="form-control" type="text" name="price_sell" required>
+                    <label>Stok</label>
+                    <input class="form-control" type="text" name="stock" required>
+                    <label>Deskripsi</label>
+                    <textarea class="form-control" rows="7" name="product_desc" required></textarea>
+                  </div>
+              </div>
+              <div class="col" posisi="kanan">
+                <label>Diskon</label>
+                    <input class="form-control" type="text" name="disc" required>
+                <label>QR / Barcode</label>
+                    <input class="form-control" type="text" name="qr_bar_code" required>
+
+                <div class="form-group">
+                  <label for="gambar_1">Gambar 1</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="gambar_1" name="gambar_1">
+                      <label class="custom-file-label" for="gambar_1">Pilih Gambar</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="gambar_2">Gambar 2</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="gambar_2" name="gambar_2">
+                      <label class="custom-file-label" for="gambar_2">Pilih Gambar</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="gambar_3">Gambar 3</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="gambar_3" name="gambar_3">
+                      <label class="custom-file-label" for="gambar_3">Pilih Gambar</label>
+                    </div>
+                  </div>
+                </div>
+
+                  <input type="submit" value="Tambah Produk" class="btn btn-primary active">
+                                
+              </div>
+            </div>
+
+            </form>
+          </div>
+          <!-- /.card-body -->
+        </div>
+
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<script>
+  pilih_kategori = document.getElementById('kategori');
+  pilih_kategori.onchange = function(){
+    kategori = pilih_kategori.value;
+    alert(kategori);
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %} Kategori Produk {% endblock %}
+{% block content %} 
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Kategori Produk</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="tblproduk" class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Jenis</th>
+                  <th>Satuan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {% for data in category %}
+                  <td>{{ loop.index }}</td>
+                  <td>{{ data.1 }}</td>
+                  <td>{{ data.2 }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+
+<!-- page script -->
+<script>
+  $(document).ready(function () {
+    $("#tblproduk").DataTable({
+      "responsive": true,
+      "autoWidth": false
+    });
+  });
+</script>
+{% endblock %}
