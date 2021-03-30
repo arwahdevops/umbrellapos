@@ -29,7 +29,7 @@
                   <th>Harga Jual</th>
                   <th>Stock</th>
                   <th>Diskon %</th>
-                  <th>Action</th>
+                  <th><center>Actions</center></th>
                 </tr>
               </thead>
               <tbody>
@@ -44,8 +44,10 @@
                   <td>{{ data.6 }}</td>
                   <td>{{ data.7 }}</td>
                   <td>
-                    <button class="edit-modal btn btn-info"><span class="glyphicon glyphicon-trash"></span> Edit</button>
-                    <button class="delete-modal btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+                    <center>
+                      <button class="edit-modal btn btn-info"><i class="fas fa-edit"></i></button>
+                      <button class="delete-modal btn btn-danger"><i class="fas fa-trash"></i></button>
+                    </center>
                   </td>
                 </tr>
                 {% endfor %}
