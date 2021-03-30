@@ -22,12 +22,25 @@
               <div class="col" posisi="kiri">
                 <form method="post" enctype="multipart/form-data">
                   <div>
-                    <label>Jenis Produk</label>
-                    <input class="form-control" type="text" name="jenis" required>
-                    <label>Satuan</label>
-                    <input class="form-control" type="text" name="satuan" required>
+                    <label>Nama</label>
+                    <input class="form-control" type="text" name="name" required>
+                    <label>Telepon</label>
+                    <input class="form-control" type="text" name="phone" required>
+                    <label>Email</label>
+                    <div class="input-group mb-3">
+                      <input type="email" class="form-control" name="email">
+                      <div class="input-group-append">
+                        <div class="input-group-text">
+                          <span class="fas fa-envelope"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <label>Kota</label>
+                    <input class="form-control" type="text" name="city" required>
+                    <label>Alamat</label>
+                    <textarea class="form-control" rows="4" name="address" required></textarea>
                     <br>
-                    <input type="submit" value="Tambah Produk" class="btn btn-primary active">
+                    <input type="submit" value="Tambah Supplier" class="btn btn-primary active">
                   </div>
               </div>
 

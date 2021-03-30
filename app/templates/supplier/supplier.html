@@ -23,9 +23,9 @@
                     <th>No</th>
                     <th>Nama Supplier</th>
                     <th>Telepon</th>
-                    <th>Kota</th>
-                    <th>Alamat</th> 
                     <th>Email</th>
+                    <th>Kota</th> 
+                    <th>Alamat</th>
                     <th>Action</th>  
                   </tr>
                 </thead>
@@ -39,10 +39,10 @@
                     <td>{{ data.4 }}</td>
                     <td>{{ data.5 }}</td>
                     <td>
-                    <center>
-                      <button class="edit-modal btn btn-info"><span class="glyphicon glyphicon-trash"></span> Edit</button>
-                      <button class="delete-modal btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button>
-                    </center>
+                      <center>
+                        <button class="edit-modal btn btn-info"><i class="fas fa-edit"></i></button>
+                        <button class="delete-modal btn btn-danger"><i class="fas fa-trash"></i></button>
+                      </center>
                     </td>
                   </tr>
                   {% endfor %}
