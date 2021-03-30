@@ -6,7 +6,7 @@ register = Blueprint('register', __name__)
 @register.route('/register', methods=['GET','POST'])
 def register_index():
     if request.method == 'GET':
-        return render_template('register.html')
+        return render_template('/user/register.html')
     else:
         name = request.form['name']
         email = request.form['email']

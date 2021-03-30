@@ -7,12 +7,6 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
-
-        <div class="callout callout-info">
-          <h5><i class="fas fa-info"></i> Note:</h5>
-          Sebelum mengedit produk pastikan telah melakukan supplier order.
-        </div>
-        
         <div>
           <a href="/add_product" class="btn btn-primary active" role="button" aria-pressed="true">Tambah Produk</a>
         </div>
@@ -31,11 +25,11 @@
                   <th>Kode Produk</th>
                   <th>Nama Produk</th>
                   <th>Kategori</th>
+                  <th>Satuan</th>
                   <th>Harga Jual</th>
                   <th>Stock</th>
                   <th>Diskon %</th>
-                  <th>Deskripsi Produk</th>
-                  <th>QR / Barcode</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -45,11 +39,14 @@
                   <td>{{ data.1 }}</td>
                   <td>{{ data.2 }}</td>
                   <td>{{ data.3 }}</td>
-                  <td>Rp.{{ data.4 }}</td>
-                  <td>{{ data.5 }}</td>
+                  <td>{{ data.4 }}</td>
+                  <td>Rp.{{ data.5 }}</td>
                   <td>{{ data.6 }}</td>
                   <td>{{ data.7 }}</td>
-                  <td>{{ data.8 }}</td>
+                  <td>
+                    <button class="edit-modal btn btn-info"><span class="glyphicon glyphicon-trash"></span> Edit</button>
+                    <button class="delete-modal btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+                  </td>
                 </tr>
                 {% endfor %}
               </tbody>
@@ -57,7 +54,6 @@
           </div>
           <!-- /.card-body -->
         </div>
-        <!-- /.card -->
 
       </div>
       <!-- /.col -->
@@ -66,7 +62,6 @@
   </div>
   <!-- /.container-fluid -->
 </section>
-
 <!-- page script -->
 <script>
   $(document).ready(function () {

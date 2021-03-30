@@ -26,6 +26,6 @@ def login_index():
              user = session['name']
              return redirect(url_for("main.main_index"))
         else:
-            return render_template("login.html")
+            return render_template("/user/login.html")
 
-        return render_template("login.html")
+        return render_template("/user/login.html")

@@ -34,8 +34,13 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="/dashboard" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/logout" class="nav-link">Logout</a>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout" role="button">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -54,8 +59,8 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">{{ judul }}</li>
+                                <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                                <li class="breadcrumb-item active"><a href="#">{{ judul }}</a></li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -70,24 +75,27 @@
         <footer class="main-footer">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline">
-              Riki Permana
+                Riki Permana
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2021 <a href="https://rikipermana.online">Umbrella POS System</a>.</strong> All rights reserved.
-          </footer>
+            <strong>Copyright &copy; 2021 <a href="https://rikipermana.online">Umbrella POS System</a>.</strong> All
+            rights reserved.
+        </footer>
     </div>
     <!-- ./wrapper -->
 
 
-<!-- DataTables -->
-<script src="{{ url_for('static', filename='plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ url_for('static', filename='dist/js/adminlte.min.js') }}"></script>
+    <!-- DataTables -->
+    <script src="{{ url_for('static', filename='plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables-responsive/js/dataTables.responsive.min.js') }}">
+    </script>
+    <script src="{{ url_for('static', filename='plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}">
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ url_for('static', filename='dist/js/adminlte.min.js') }}"></script>
 </body>
 
 </html>

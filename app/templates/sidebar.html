@@ -3,7 +3,7 @@
   <a href="/dashboard" class="brand-link">
     <img src="{{ url_for('static', filename='dist/img/AdminLTELogo.png') }}" alt="Umbrella POS System Logo"
       class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">UmbrellaPS</span>
+    <span class="brand-text font-weight-light">UmbrellaPOS</span>
   </a>
 
   <!-- Sidebar -->
@@ -24,7 +24,7 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview menu-open">
+        <li class="nav-item has-treeview {% if menu=='Dashboard' %} menu-open {% endif %}">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
@@ -34,7 +34,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/dashboard" class="nav-link active">
+              <a href="/dashboard" class="nav-link {% if submenu=='Dashboard' %} active {% endif %}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard</p>
               </a>
@@ -42,7 +42,7 @@
           </ul>
         </li>
 
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview {% if menu=='Product' %} menu-open {% endif %}">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-shopping-bag"></i>
             <p>
@@ -52,13 +52,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/product" class="nav-link">
+              <a href="/product" class="nav-link {% if submenu=='Data Product' %} active {% endif %}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Product</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/category" class="nav-link">
+              <a href="/category" class="nav-link {% if submenu=='Product Category' %} active {% endif %}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Product Category</p>
               </a>
@@ -66,7 +66,7 @@
           </ul>
         </li>
 
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview {% if menu=='Supplier' %} menu-open {% endif %}">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-user-tie"></i>
             <p>
@@ -76,13 +76,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/supplier" class="nav-link">
+              <a href="/supplier" class="nav-link {% if submenu=='Data Supplier' %} active {% endif %}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Supplier</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/supplier/order" class="nav-link">
+              <a href="/supplier/order" class="nav-link {% if submenu=='Supplier Order' %} active {% endif %}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Supplier Order</p>
               </a>
@@ -90,7 +90,7 @@
           </ul>
         </li>
 
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview {% if menu=='Report' %} menu-open {% endif %}">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-bar"></i>
             <p>
@@ -100,13 +100,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/pemasukan" class="nav-link">
+              <a href="/pendapatan" class="nav-link {% if submenu=='Pendapatan' %} active {% endif %}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Pemasukan</p>
+                <p>Pendapatan</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/report/pengeluaran" class="nav-link">
+              <a href="/report/pengeluaran" class="nav-link {% if submenu=='Pengeluaran' %} active {% endif %}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Pengeluaran</p>
               </a>
@@ -124,7 +124,7 @@
 
         <li class="nav-header">USERS</li>
         <li class="nav-item">
-          <a href="/profile" class="nav-link">
+          <a href="/user" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>User Management</p>
           </a>

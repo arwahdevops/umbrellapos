@@ -5,4 +5,4 @@ forgot = Blueprint('forgot', __name__)
 @forgot.route('/forgot')
 def forgot_index():
     
-    return render_template('forgot_password.html')
+    return render_template('/user/forgot_password.html')

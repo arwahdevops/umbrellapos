@@ -5,4 +5,4 @@ member = Blueprint('member', __name__)
 @member.route('/member')
 def member_index():
     judul = "Member"
-    return render_template('member.html', judul=judul)
+    return render_template('/member/member.html', judul=judul)

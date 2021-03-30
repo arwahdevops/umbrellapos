@@ -2,5 +2,70 @@
 {% block title %} Supplier {% endblock %}
 {% block content %} 
 <!-- Main content -->
-
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div>
+            <a href="/add_supplier" class="btn btn-primary active" role="button" aria-pressed="true">Tambah Supplier</a>
+          </div>
+          <br>
+  
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Data Supplier</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="tbl_suppliers" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama Supplier</th>
+                    <th>Telepon</th>
+                    <th>Kota</th>
+                    <th>Alamat</th> 
+                    <th>Email</th>
+                    <th>Action</th>  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    {% for data in suppliers %}
+                    <td>{{ loop.index }}</td>
+                    <td>{{ data.1 }}</td>
+                    <td>{{ data.2 }}</td>
+                    <td>{{ data.3 }}</td>
+                    <td>{{ data.4 }}</td>
+                    <td>{{ data.5 }}</td>
+                    <td>
+                    <center>
+                      <button class="edit-modal btn btn-info"><span class="glyphicon glyphicon-trash"></span> Edit</button>
+                      <button class="delete-modal btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+                    </center>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+  
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- page script -->
+  <script>
+    $(document).ready(function () {
+      $("#tbl_suppliers").DataTable({
+        "responsive": true,
+        "autoWidth": false
+      });
+    });
+  </script>
 {% endblock %}
