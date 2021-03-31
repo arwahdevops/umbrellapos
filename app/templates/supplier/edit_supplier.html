@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block title %} Tambah Supplier {% endblock %}
+{% block content %}
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Supplier</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                  class="fas fa-minus"></i></button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col" posisi="kiri">
+                <form action="/supplier/edit/{{supplier.id}}" method="post" enctype="multipart/form-data">
+                  <div>
+                    <label>Nama</label>
+                    <input class="form-control" type="text" name="name" value="{{supplier.name}}" required>
+                    <label>Telepon</label>
+                    <input class="form-control" type="text" name="phone" value="{{supplier.phone}}" required>
+                    <label>Email</label>
+                    <div class="input-group mb-3">
+                      <input type="email" class="form-control" name="email" value="{{supplier.email}}">
+                      <div class="input-group-append">
+                        <div class="input-group-text">
+                          <span class="fas fa-envelope"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <label>Kota</label>
+                    <input class="form-control" type="text" name="city" value="{{supplier.city}}" required>
+                    <label>Alamat</label>
+                    <textarea class="form-control" rows="4" name="address" required>{{supplier.address}}</textarea>
+                    <br>
+                    <input type="submit" value="Update Supplier" class="btn btn-primary active">
+                  </div>
+              </div>
+
+              </form>
+            </div>
+            <!-- /.card-body -->
+          </div>
+
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+{% endblock %}

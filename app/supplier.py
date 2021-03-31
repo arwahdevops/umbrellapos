@@ -1,5 +1,5 @@
 from flask import Flask, render_template, Blueprint, session, redirect, url_for, request
-from .extensions import mysql
+from .extensions import mysql, MySQLdb
 supplier = Blueprint('supplier', __name__)
 
 @supplier.route('/supplier')
@@ -37,3 +37,43 @@ def add_supplier():
         mysql.connection.commit()
 
         return redirect(url_for("supplier.add_supplier"))
+
+@supplier.route('/supplier/edit/<string:id>', methods=['GET','POST'])
+def edit_supplier(id):
+    if request.method == 'GET':
+        judul = "Edit Supplier"
+
+        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute("SELECT * FROM suppliers WHERE id=%s", (id))
+        data = cur.fetchall()
+        cur.close()
+        return render_template('/supplier/edit_supplier.html', judul=judul, supplier=data[0])
+    else:
+        name = request.form['name']
+        phone = request.form['phone']
+        email = request.form['email']
+        city = request.form['city']
+        address = request.form['address']
+        
+        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute("""
+                    UPDATE suppliers 
+                    SET name=%s,
+                        phone=%s,
+                        email=%s,
+                        city=%s,
+                        address=%s 
+                    WHERE id=%s
+                    """,(name,phone,email,city,address,id))
+        mysql.connection.commit()
+
+        return redirect(url_for("supplier.supplier_index"))
+
+@supplier.route('/supplier/delete/<string:id>', methods=['GET','POST'])
+def delete_supplier(id):
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute("DELETE FROM suppliers WHERE id={0}".format(id))
+    mysql.connection.commit()
+    cur.close()
+
+    return redirect(url_for("supplier.supplier_index"))
