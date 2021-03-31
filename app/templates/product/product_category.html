@@ -23,6 +23,7 @@
                   <th>No</th>
                   <th>Jenis</th>
                   <th>Satuan</th>
+                  <th><center>Action</center></th>
                 </tr>
               </thead>
               <tbody>
@@ -31,6 +32,12 @@
                   <td>{{ loop.index }}</td>
                   <td>{{ data.1 }}</td>
                   <td>{{ data.2 }}</td>
+                  <td>
+                    <center>
+                      <a href="/category/edit/{{ data.0 }}" class="edit-modal btn btn-info"><i class="fas fa-edit"></i></a>
+                      <a href="/category/delete/{{ data.0 }}" class="delete-modal btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </center>
+                </td>
                 </tr>
                 {% endfor %}
               </tbody>

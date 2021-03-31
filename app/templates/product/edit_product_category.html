@@ -20,14 +20,14 @@
           <div class="card-body">
             <div class="row">
               <div class="col" posisi="kiri">
-                <form method="post" enctype="multipart/form-data">
+                <form action="/category/edit/{{category.id}}" method="post" enctype="multipart/form-data">
                   <div>
                     <label>Jenis Produk</label>
-                    <input class="form-control" type="text" name="jenis" required>
+                    <input class="form-control" type="text" name="jenis" value="{{category.jenis}}" required>
                     <label>Satuan</label>
-                    <input class="form-control" type="text" name="satuan" required>
+                    <input class="form-control" type="text" name="satuan" value="{{category.satuan}}" required>
                     <br>
-                    <input type="submit" value="Tambah Kategori" class="btn btn-primary active">
+                    <input type="submit" value="Update Kategori" class="btn btn-primary active">
                   </div>
               </div>
 
@@ -43,11 +43,5 @@
     </div>
     <!-- /.container-fluid -->
 </section>
-<script>
-  pilih_kategori = document.getElementById('kategori');
-  pilih_kategori.onchange = function () {
-    kategori = pilih_kategori.value;
-    alert(kategori);
-  }
-</script>
+
 {% endblock %}
