@@ -1,7 +1,13 @@
+import os
 from flask import Flask, render_template, Blueprint, session, redirect, url_for, request
 from werkzeug.utils import secure_filename
+
+import app
 from .extensions import mysql, MySQLdb
 product = Blueprint('product', __name__)
+
+# Define allowed file extensions
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 def allowed_file(filename):
     return '.' in filename and \
